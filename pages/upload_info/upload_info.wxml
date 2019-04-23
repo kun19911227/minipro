@@ -1,0 +1,37 @@
+<view class='box'>
+  <view class="section">
+    <input placeholder="姓名" bindblur="name" style='background-image: url({{background1}});' />
+  </view>
+  
+  <view class="section">
+    <input type='number' placeholder="电话" bindblur="phone" style='background-image: url({{background2}});' />
+  </view>
+  
+  <view class="section" style='height:165px;'>
+    <textarea class='texta' bindblur="bindTextAreaBlur" placeholder="个人简介" />
+  </view>
+  <view class='upload_img'>
+    <view class='upload_img_btn'>
+      <view class='title'>
+        <view class='shu'></view>
+        <text>上传图片</text>
+      </view>
+      <button type="primary" size="{{primarySize}}" bindtap="chooseImage" class='btn'>添加</button>
+    </view>
+    <view class='img_box' id='imgs' style='display:flex;justify-content: space-between;padding-top:10px;'>
+      <!-- 存放上传的图片的盒子 -->
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap imgs">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">删除</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <view class='btn_box'>
+    <button type="primary" bindtap="upload_info" class='upload_info'>提交表单</button>
+  </view>
+</view>
