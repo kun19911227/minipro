@@ -5,9 +5,9 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <view class="usermotto">
+          <button type="primary" bindtap="info">填写信息</button>
+      </view>
     </block>
-  </view>
-  <view class="usermotto">
-      <button type="primary" bindtap="info">填写信息</button>
   </view>
 </view>

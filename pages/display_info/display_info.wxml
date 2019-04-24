@@ -1,0 +1,50 @@
+<view class='display_indo'>
+  <view class='header_bg' style='background-image: url({{background1}});'></view>
+  <view class='header_box'>
+    <view class='user_head_box'>
+      <image src='{{userInfo.avatarUrl}}' class='user_head'></image>
+    </view>
+    <text class='name'>{{userInfo.nickName}}</text>
+    <!-- 处理状态 -->
+    <text class='time'>创建时间：{{banana.create_time}}</text>
+  </view>
+  <view class='info_box'>
+    <view style='display: flex;'>
+      <view style='width:50%;'>
+        <text class='title'>姓名：</text>
+        <text class='content'>{{banana.name}}</text>
+      </view>
+      
+    </view>
+    <view>
+      <text class='title'>电话：</text>
+      <text class='content'>{{banana.phone}}</text>
+    </view>
+  </view>
+  <view class='describe'>
+    <view class='title_box'>
+      <view class='shuxian'></view>
+      <view class='titles'>个人简介</view>
+    </view>
+    <view class='describe_content' wx:if="{{ banana.introduce != '' }}">
+      {{banana.introduce}}
+    </view>
+    <view wx:else class='no'>
+        暂无个人简介
+    </view>
+  </view>
+  <view class='img_box'>
+    <view class='title_box'>
+      <view class='shuxian'></view>
+      <view class='titles'>图片</view>
+    </view>
+    <view style='display:flex;justify-content: space-between;padding-top:10px;'>
+      <view class='imgs' wx:for="{{ img_list }}" wx:key="index" wx:if="{{ banana.photo != '' }}">
+        <image wx:if="{{ item }}" src='{{ item }}'></image>
+      </view>
+      <view wx:if="{{ banana.photo == '' }}" class='no'>
+        暂无图片
+      </view>
+    </view>
+  </view>
+</view>

@@ -92,13 +92,6 @@ Page({
         duration: 2000,
         mask: true
       })
-    } else if (that.data.describe == '') {
-      wx.showToast({
-        title: '个人简介不能为空',
-        icon: 'none',
-        duration: 2000,
-        mask: true
-      })
     } else {
       if (that.data.images.length == 0) {//当上传图片为0时，只提交表单的文字信息
         wx.request({
@@ -123,6 +116,9 @@ Page({
                 icon: 'none',
                 duration: 2000,
                 mask: true
+              })
+              wx.navigateTo({
+                url: '../display_info/display_info?id=' + res.data.id,//跳转至展示页
               })
             } else {
               console.log(res.data.msg)
@@ -168,6 +164,9 @@ Page({
                         icon: 'none',
                         duration: 2000,
                         mask: true
+                      })
+                      wx.navigateTo({
+                        url: '../display_info/display_info?id=' + res.data.id,//跳转至展示页
                       })
                     } else {
                       console.log(res.data.msg)

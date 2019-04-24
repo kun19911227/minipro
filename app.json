@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/display_info/display_info",
+    "pages/upload_info/upload_info"
   ],
   "window":{
     "backgroundTextStyle":"light",
