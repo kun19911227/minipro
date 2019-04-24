@@ -115,7 +115,7 @@
 }
 .imgs image{
   width: 100%;
-  height: 170px;
+  height: 150px;
 }
 .expert{
   width: 95%;
